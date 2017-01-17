@@ -15,5 +15,16 @@ Additionally, the Login servers plugin will be activated if a file named
 "servers.json" is in the same folder as adminer.php, or if the path to a JSON
 config file is passed through the SERVERS_JSON_FILE environment variable.
 
-To get the custom version of adminer.php, run this:
+There are currently four builds of Adminer built by this Dockerfile: one with
+support for MySQL, SQLite and PostgreSQL, and one each with support for just
+an individual engine.
+
+To get the build of Adminer with support for all three engines, run this:
 docker run --rm=true -v /tmp:/data/release djmattyg007/adminer-build:${VERSION}
+
+To get the build of Adminer with support for a specific engine, run this:
+docker run --rm=true -v /tmp:/data/release djmattyg007/adminer-build:${VERSION} cp /data/adminer-${ENGINE}.php /data/release/adminer-${ENGINE}.php
+Where ${ENGINE} is one of "mysql", "sqlite" or "pgsql".
+
+Adminer is built using this repository:
+https://github.com/djmattyg007/adminer
