@@ -16,10 +16,10 @@ COPY index.php /tmp/index.php
 RUN find adminer/drivers -mindepth 1 -not -name 'mysql*' -a -not -name 'sqlite*' -a -not -name 'pgsql*' -print -delete && \
     grep -v -P '^include.*drivers\/((?!mysql|sqlite|pgsql).)+' adminer/include/bootstrap.inc.php > /tmp/bootstrap.inc.php && \
     mv /tmp/bootstrap.inc.php adminer/include/bootstrap.inc.php && \
-    php compile.php && \
-    php compile.php mysql && \
-    php compile.php sqlite && \
-    php compile.php pgsql && \
+    php7 compile.php && \
+    php7 compile.php mysql && \
+    php7 compile.php sqlite && \
+    php7 compile.php pgsql && \
     cp plugins/plugin.php /data/compile/01.php && \
     tail -n +2 plugins/login-servers.php > /data/compile/02.php && \
     tail -n +2 plugins/table-structure.php > /data/compile/03.php && \
