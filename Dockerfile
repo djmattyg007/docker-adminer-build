@@ -3,7 +3,7 @@ MAINTAINER Matthew Gamble <git@matthewgamble.net>
 
 ENV VERSION="4.2.5-patch3"
 
-RUN apk add --update git php7 php7-common
+RUN apk add --update git grep php7 php7-common
 RUN mkdir -p /data/compile /data/release && \
     git clone https://github.com/djmattyg007/adminer.git /data/git
 
