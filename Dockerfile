@@ -1,7 +1,7 @@
 FROM alpine:3.5
 MAINTAINER Matthew Gamble <git@matthewgamble.net>
 
-ENV VERSION="4.2.5-patch3"
+ENV VERSION="4.2.5-patch4"
 
 RUN apk add --update git grep php7 php7-common
 RUN mkdir -p /data/compile /data/release && \

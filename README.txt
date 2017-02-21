@@ -21,6 +21,7 @@ an individual engine.
 
 To get the build of Adminer with support for all three engines, run this:
 docker run --rm=true -v /tmp:/data/release djmattyg007/adminer-build:${VERSION}
+The final compiled version of adminer will end up in /tmp on your machine.
 
 To get the build of Adminer with support for a specific engine, run this:
 docker run --rm=true -v /tmp:/data/release djmattyg007/adminer-build:${VERSION} cp /data/adminer-${ENGINE}.php /data/release/adminer-${ENGINE}.php
